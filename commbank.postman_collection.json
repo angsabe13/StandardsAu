@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "a18e9efc-15cd-4984-8b5d-e31404dfc1b3",
+		"name": "commbank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getStateCode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The response has correct state_code\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.data[0].state_code).to.eql(\"NY\");\r",
+							"    console.log(\"responseJson - length: \" + responseJson.data[0].state_code)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.weatherbit.io/v2.0/current?lat=40.730610&lon=-73.935242&key={{master_key}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "40.730610"
+						},
+						{
+							"key": "lon",
+							"value": "-73.935242"
+						},
+						{
+							"key": "key",
+							"value": "{{master_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getForecast",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"  pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The error message is detailed in response\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.error).to.eql(\"Your API key does not allow access to this endpoint.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.weatherbit.io/v2.0/forecast/3hourly?postal_code=3999&key={{master_key}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"forecast",
+						"3hourly"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "3999"
+						},
+						{
+							"key": "key",
+							"value": "{{master_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "master_key",
+			"value": "b2742b1c86ea4e3da83d0b96a38e51b8"
+		}
+	]
+}
