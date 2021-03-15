@@ -6,7 +6,8 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/features", glue= {"seleniumgluecode"}
+		features = "src/test/java/features", glue= {"seleniumgluecode",},
+		plugin = { "pretty", "html:target/cucumber-reports" }
 )
 
 public class testrunner {
