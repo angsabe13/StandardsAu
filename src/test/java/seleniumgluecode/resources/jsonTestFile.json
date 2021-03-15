@@ -1,0 +1,22 @@
+[{
+    "id": "0001",
+    "title": "Ms",
+    "firstName" : "Jane",
+    "middleName" : "S",
+    "lastName" : "Doe",
+    "accountType" : "Single",
+    "isConcessionCardHolder" : false,
+    "email" : "test@mail.com",
+    "mobile" : "12345678"
+},
+{
+    "id": "0002",
+    "title": "Mr",
+    "firstName" : "John",
+    "middleName" : "K",
+    "lastName" : "Doe",
+    "accountType" : "Single",
+    "isConcessionCardHolder" : false,
+    "email" : "user@mail.com",
+    "mobile" : "88889999"
+}]

@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractTest {
-    protected static WebDriver driver;
-    protected static JavascriptExecutor jse;
+    protected static WebDriver driver = null;
+    protected static JavascriptExecutor jse = null;
     
     protected void initialize() {
     	System.setProperty("webdriver.chrome.driver", "..\\chromedriver.exe");
@@ -37,6 +37,10 @@ public class AbstractTest {
 	
 	protected void js_click(WebElement element) {
 		jse.executeScript("arguments[0].click()", element);
+	}
+	
+	protected WebDriver getDriver() {
+		return driver;
 	}
 
 }
