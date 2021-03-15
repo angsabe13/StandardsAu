@@ -7,7 +7,7 @@ Feature: Customer registration form
     And user clicks Open now for Smart Account Access
     And user navigates upto Now tell us about yourself form
     And user fills up Now tell us about yourself fields
-    Then assertion here
+    Then assertion success here
     
     Scenario: Login as a customer 0002
     Given Customer logs in as customer "0002"
@@ -15,4 +15,4 @@ Feature: Customer registration form
     And user clicks Open now for Smart Account Access
     And user navigates upto Now tell us about yourself form
     And user fills up Now tell us about yourself fields
-    Then assertion here
+    Then assertion failure here

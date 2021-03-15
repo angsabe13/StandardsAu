@@ -57,9 +57,17 @@ public class test extends AbstractTest {
     	js_click("OK");
     }   
     
-    @Then("^assertion here$")
-    public void assertion_here() throws Throwable {
+    @Then("^assertion success here$")
+    public void assertion_success_here() throws Throwable {
         Assert.assertEquals(customer.title, registerForm.getTitle());
+        Assert.assertEquals(customer.firstName, registerForm.getFirstName());
+        Assert.assertEquals(customer.middleName, registerForm.getMiddleName());
+        Assert.assertEquals(customer.lastName, registerForm.getLastName());
+    }
+    
+    @Then("^assertion failure here$")
+    public void assertion_failure_here() throws Throwable {
+        Assert.assertEquals("fail", registerForm.getTitle());
         Assert.assertEquals(customer.firstName, registerForm.getFirstName());
         Assert.assertEquals(customer.middleName, registerForm.getMiddleName());
         Assert.assertEquals(customer.lastName, registerForm.getLastName());

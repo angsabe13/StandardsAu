@@ -14,3 +14,5 @@ Install Chrome driver
 
 Execute test
 1. Run test as JUnit Test
+
+Report: StandardsAu\target\cucumber-reports\index.html
