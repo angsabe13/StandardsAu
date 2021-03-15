@@ -15,7 +15,7 @@ public class AbstractTest {
     protected static JavascriptExecutor jse = null;
     
     protected void initialize() {
-    	System.setProperty("webdriver.chrome.driver", "..\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
     	driver = new ChromeDriver();
     	jse = (JavascriptExecutor)driver;
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -72,7 +72,7 @@ public class CustomerRegisterForm extends AbstractTest{
     }
     
     public String getLastName() {
-    	return (String)jse.executeScript("return nameForm.lasstName.value");
+    	return (String)jse.executeScript("return nameForm.lastName.value");
     }
 
 
